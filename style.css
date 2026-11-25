@@ -20,9 +20,9 @@ html, body {
 }
 
 body {
-    background: radial-gradient(ellipse at 50% 62%, #18345e 0%, #0b1c3f 52%, #050b18 100%);
+    background: linear-gradient(135deg, #e7f0fb, #cdddf0, #f6f9ff);
     font-family: Arial, Helvetica, sans-serif;
-    color: var(--rangers-white);
+    color: var(--rangers-navy);
     overflow: hidden;
     text-align: center;
 }
@@ -48,12 +48,12 @@ h1 {
     text-transform: uppercase;
     letter-spacing: -2px;
     margin: 5px;
-    color: var(--rangers-white);
+    color: var(--rangers-navy);
     text-shadow: 3px 3px var(--rangers-blue);
 }
 
 .subtitle {
-    color: #d7e4f6;
+    color: #34547d;
     font-size: 14px;
     font-style: italic;
 }
@@ -61,20 +61,8 @@ h1 {
 /* STEP 2: Ice rink background */
 
 .rink {
-    position: absolute;
-    width: 90%;
-    height: 70%;
-    left: 5%;
-    top: 20%;
-    background: linear-gradient(
-        135deg,
-        #e7f0fb,
-        #cdddf0,
-        #f6f9ff
-    );
-    border: 5px solid #7895bd;
-    border-radius: 100px;
-    box-shadow: 0 15px 40px #0038a815;
+    position: fixed;
+    inset: 0;
     overflow: hidden;
 }
 
@@ -944,83 +932,8 @@ footer {
     }
 }
 
-/* Animated rink glow */
-
-.rink {
-    animation: rinkGlow 4s ease-in-out infinite;
-}
-
-@keyframes rinkGlow {
-    0%, 100% {
-        box-shadow: 0 0 20px #0038a820;
-    }
-
-    50% {
-        box-shadow: 0 0 45px #0038a850;
-    }
-}
-
 /* =====================================
-   STEP 17: HOCKEY SCOREBOARD
-===================================== */
-
-.scoreboard {
-    position: absolute;
-    top: 23%;
-    right: 7%;
-    width: 180px;
-    padding: 15px;
-    background: #101820;
-    color: white;
-    border: 3px solid var(--rangers-blue);
-    border-radius: 12px;
-    box-shadow: 0 5px 20px #10182030;
-    z-index: 12;
-}
-
-.game-status {
-    color: var(--rangers-red);
-    font-size: 10px;
-    font-weight: bold;
-    letter-spacing: 3px;
-    animation: gameStatus 2s infinite;
-}
-
-.score {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 8px;
-    margin: 12px 0;
-}
-
-.score span {
-    font-size: 12px;
-    font-weight: bold;
-}
-
-.score strong {
-    font-size: 25px;
-}
-
-.period {
-    font-size: 10px;
-    letter-spacing: 3px;
-    color: #9eb7bd;
-}
-
-@keyframes gameStatus {
-    0%, 100% {
-        opacity: 1;
-    }
-
-    50% {
-        opacity: 0.4;
-    }
-}
-
-/* =====================================
-   STEP 18: EXTRA GAME DAY DETAILS
+   STEP 17: EXTRA GAME DAY DETAILS
 ===================================== */
 
 /* Animated jersey number */
@@ -1063,23 +976,6 @@ header {
 .turkey:hover,
 .turkey:hover * {
     animation-play-state: paused;
-}
-
-/* Keep the scoreboard from covering him
-   on smaller screens */
-
-@media (max-width: 700px) {
-    .scoreboard {
-        top: auto;
-        bottom: 65px;
-        right: 5%;
-        width: 135px;
-        padding: 8px;
-    }
-
-    .score strong {
-        font-size: 18px;
-    }
 }
 
 /* Accessibility: reduced motion */
